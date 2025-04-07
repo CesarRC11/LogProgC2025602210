@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="PIZZER&#205;A"/>
+        <attribute name="authors" value="em100"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-04-06 08:10:03 p. m."/>
+        <attribute name="created" value="ZW0xMDA7QVNVUy1BMTU7MjAyNS0wNC0wNjswNTozNDo1NSBwLiBtLjsyMzU2"/>
+        <attribute name="edited" value="ZW0xMDA7QVNVUy1BMTU7MjAyNS0wNC0wNjswNzo0ODo0NyBwLiBtLjsxO2VtMTAwO0FTVVMtQTE1OzIwMjUtMDQtMDY7MDY6NTI6MzUgcC4gbS47cGl6emFfYmVsbGFfbmFwb2xpX21lam9yYWRvLmZwcmc7ODI2OQ=="/>
+        <attribute name="edited" value="ZW0xMDA7QVNVUy1BMTU7MjAyNS0wNC0wNjswODoxMDowMyBwLiBtLjszOzI0NTY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Bienvenido a la pizzer&#237;a Bella Napoli.&quot;" newline="True"/>
+            <output expression="&quot;Qu&#233; tipo de pizza quiere?&quot;" newline="True"/>
+            <output expression="&quot;1. Vegetariana&quot;" newline="True"/>
+            <output expression="&quot;2. No Vegetariana&quot;" newline="True"/>
+            <declare name="TipoPizza" type="String" array="False" size=""/>
+            <declare name="Vegetariana" type="Boolean" array="False" size=""/>
+            <declare name="Opci&#243;nIngrediente" type="String" array="False" size=""/>
+            <declare name="IngredienteSeleccionado" type="String" array="False" size=""/>
+            <input variable="TipoPizza"/>
+            <if expression="TipoPizza==&quot;1&quot;">
+                <then>
+                    <assign variable="Vegetariana" expression="True"/>
+                    <output expression="&quot;Pizza vegetariana seleccionada&quot;" newline="True"/>
+                    <output expression="&quot;Seleccione uno de los ingredientes&quot;" newline="True"/>
+                    <declare name="Pimiento" type="Real" array="False" size=""/>
+                    <output expression="&quot;1. Pimiento&quot;" newline="True"/>
+                    <declare name="Tofu" type="Real" array="False" size=""/>
+                    <output expression="&quot;2. Tofu&quot;" newline="True"/>
+                    <input variable="Opci&#243;nIngrediente"/>
+                    <if expression="Opci&#243;nIngrediente=&quot;1&quot;">
+                        <then>
+                            <assign variable="IngredienteSeleccionado" expression="&quot;1&quot;"/>
+                            <output expression="&quot;Ingrediente Pimiento seleccionado&quot;" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="Opci&#243;nIngrediente=&quot;2&quot;">
+                                <then>
+                                    <assign variable="IngredienteSeleccionado" expression="&quot;2&quot;"/>
+                                    <output expression="&quot;Ingrediente Tofu seleccionado&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;Ninguno seleccionado, se usara Pimiento por defecto&quot;" newline="True"/>
+                                    <assign variable="IngredienteSeleccionado" expression="&quot;1&quot;"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="TipoPizza==&quot;2&quot;">
+                        <then>
+                            <assign variable="Vegetariana" expression="False"/>
+                            <output expression="&quot;Pizza no vegetariana seleccionada&quot;" newline="True"/>
+                            <output expression="&quot;Selecciones uno de los ingredientes&quot;" newline="True"/>
+                            <declare name="Peperoni" type="Real" array="False" size=""/>
+                            <output expression="&quot;1. Peperoni&quot;" newline="True"/>
+                            <declare name="Jam&#243;n" type="Real" array="False" size=""/>
+                            <output expression="&quot;2. Jam&#243;n&quot;" newline="True"/>
+                            <declare name="Salm&#243;n" type="Real" array="False" size=""/>
+                            <output expression="&quot;3. Salm&#243;n&quot;" newline="True"/>
+                            <input variable="Opci&#243;nIngrediente"/>
+                            <if expression="Opci&#243;nIngrediente=&quot;1&quot;">
+                                <then>
+                                    <assign variable="IngredienteSeleccionado" expression="&quot;1&quot;"/>
+                                    <output expression="&quot;Ingrediente Peperoni seleccionado&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <if expression="Opci&#243;nIngrediente=&quot;2&quot;">
+                                        <then>
+                                            <assign variable="IngredienteSeleccionado" expression="&quot;2&quot;"/>
+                                            <output expression="&quot;Ingrediente Jam&#243;n seleccionado&quot;" newline="True"/>
+                                        </then>
+                                        <else>
+                                            <if expression="Opci&#243;nIngrediente=&quot;3&quot;">
+                                                <then>
+                                                    <assign variable="IngredienteSeleccionado" expression="&quot;3&quot;"/>
+                                                    <output expression="&quot;Ingrediente Salm&#243;n seleccionado&quot;" newline="True"/>
+                                                </then>
+                                                <else>
+                                                    <output expression="&quot;Ingrediente no valido, seleccionado Pepperoni por defecto&quot;" newline="True"/>
+                                                    <assign variable="IngredienteSeleccionado" expression="&quot;1&quot;"/>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <assign variable="Vegetariana" expression="False"/>
+                            <output expression="&quot;Pizza no valida. Pizza no vegetariana de Pepperoni seleccionado por defecto&quot;" newline="True"/>
+                            <assign variable="ingredienteSeleccionado" expression="&quot;Peperoni&quot;"/>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <if expression="TipoPizza==&quot;Vegetariana&quot;">
+                <then>
+                    <output expression="&quot;Tu pizza es vegetariana&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Tu pizza en no vegetariana&quot;" newline="True"/>
+                </else>
+            </if>
+            <output expression="&quot;Ingredientes: Mozzarella, Tomate + Ingredienteseleccionado&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
