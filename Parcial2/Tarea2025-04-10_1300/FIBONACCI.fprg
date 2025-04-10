@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="FACTORIAL Y FIBONACCI"/>
+        <attribute name="authors" value="em100"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-04-08 09:47:45 p. m."/>
+        <attribute name="created" value="ZW0xMDA7QVNVUy1BMTU7MjAyNS0wNC0wODswNzozMjoyMSBwLiBtLjsyMzUx"/>
+        <attribute name="edited" value="ZW0xMDA7QVNVUy1BMTU7MjAyNS0wNC0wODswOTo0Nzo0NSBwLiBtLjsyOzI0NzQ="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="N" type="Integer" array="False" size=""/>
+            <declare name="I" type="Integer" array="False" size=""/>
+            <declare name="Origen1" type="Integer" array="False" size=""/>
+            <declare name="Origen2" type="Integer" array="False" size=""/>
+            <declare name="Siguiente" type="Integer" array="False" size=""/>
+            <declare name="Contador" type="Integer" array="False" size=""/>
+            <declare name="Fibonacci" type="Integer" array="True" size="64"/>
+            <output expression="&quot;Ponga un n&#250;mero entero para calcular su secuencia Fibonacci&quot;" newline="True"/>
+            <input variable="N"/>
+            <assign variable="Origen1" expression="1"/>
+            <assign variable="Origen2" expression="2"/>
+            <assign variable="Fibonacci[0]" expression="Origen1"/>
+            <assign variable="Fibonacci[1]" expression="Origen2"/>
+            <assign variable="Contador" expression="2"/>
+            <while expression="Contador&lt;64">
+                <assign variable="Siguiente" expression="Origen1+Origen2"/>
+                <assign variable="Fibonacci[Contador]" expression="Siguiente"/>
+                <assign variable="Origen1" expression="Origen2"/>
+                <assign variable="Origen2" expression="Siguiente"/>
+                <assign variable="Contador" expression="Contador+1"/>
+            </while>
+            <output expression="&quot;De la secuencia Fibonacci, se muestran los primeros 64 n&#250;meros&quot;" newline="True"/>
+            <for variable="I" start="0" end="63" direction="inc" step="1">
+                <output expression="Fibonacci[I]" newline="True"/>
+                <output expression="&quot; &quot;" newline="True"/>
+            </for>
+        </body>
+    </function>
+</flowgorithm>
